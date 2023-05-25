@@ -129,3 +129,28 @@
 #
 # a = Solution()
 # print(a.isValid('{{)}'))
+
+
+#My shortest method
+
+class Solution():
+    def isvalid(self, s):
+        d = {"(": ")", "{": "}", "[": "]"}
+        temp = []
+        for i in s:
+            if i in d.keys():
+                temp.append(i)
+
+            elif temp and d[temp[-1]] == i:
+                temp.remove(temp[-1])
+
+            else:
+                return False
+
+        if temp:
+            return False
+
+        return True
+
+a = Solution()
+print(a.isvalid("{{}"))
