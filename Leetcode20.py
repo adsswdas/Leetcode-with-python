@@ -142,15 +142,15 @@ class Solution():
                 temp.append(i)
 
             elif temp and d[temp[-1]] == i:
-                temp.remove(temp[-1])
-
+                temp.pop()
+                
             else:
                 return False
 
         if temp:
             return False
-
+        
         return True
 
 a = Solution()
-print(a.isvalid("{{}"))
+print(a.isvalid("[([]])"))
